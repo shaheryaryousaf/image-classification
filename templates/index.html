@@ -1,0 +1,38 @@
+{% extends "base.html" %} {% block content %}{% load crispy_forms_tags %}
+<div class="container py-5">
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title mb-0 text-center">Animal Classification</div>
+    </div>
+    <div class="card-body">
+      <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %} {{form}}
+        <button type="submit" class="btn btn-primary mt-2">
+          Classify Animal
+        </button>
+      </form>
+
+      {% if predicted_classes %}
+      <hr />
+      <h5>Output:</h5>
+      <div class="row">
+        <div class="col-md-6">
+          {% if image_url %}
+          <img src="{{ image_url }}" alt="Uploaded Image" class="img-fluid" />
+          {% endif %}
+        </div>
+        <div class="col-md-6">
+          <div class="output">
+            {% for item in predicted_classes %}
+            <p><strong>Output: </strong>{{ item.label }}</p>
+            <p><strong>Description: </strong>{{ item.description }}</p>
+            <hr />
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,53 @@
+* {
+  margin: 0;
+  font-family: "Inter";
+}
+
+body {
+  background-color: #292936;
+}
+
+.btn,
+.btn:hover {
+  background-color: #71c7de;
+  color: black;
+  border-color: #71c7de;
+  padding: 10px 20px;
+}
+
+.form-control {
+  color: black;
+  border-color: #71c7de;
+  padding: 10px 20px;
+}
+
+.card {
+  border-color: #3d3f55;
+  color: #5e9fac;
+}
+
+.card-header {
+  background-color: #696d98;
+  color: white;
+  padding: 15px;
+}
+
+.card-body {
+  background-color: #3d3f55;
+}
+
+form label {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.output {
+  background: #696d98;
+  padding: 25px;
+  color: white;
+  border-radius: 5px;
+}
+
+.output p:last-child{
+  margin-bottom: 0px !important;
+}
